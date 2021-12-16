@@ -8,14 +8,14 @@ app.use(bodyParser.urlencoded({
 })); 
 
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  res.send('hi')
 });
 
 app.post('/authenticate',function(req, res){
     if(req.body.password=="password"){
       res.sendFile(path.join(__dirname, 'secure.html'))
     }else{
-      res.send("fail")
+      res.send("failed because of wrong username")
     }
 });
 
